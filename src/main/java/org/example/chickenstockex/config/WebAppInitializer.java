@@ -21,9 +21,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
         registration.setLoadOnStartup(1);
         registration.addMapping("/");
 
-        FilterRegistration.Dynamic encodingFilter = servletContext.addFilter(
-                "encodingFilter",
-                new EncodingFilter());
+        FilterRegistration.Dynamic encodingFilter = servletContext.addFilter("encodingFilter", new EncodingFilter());
         encodingFilter.addMappingForUrlPatterns(null, true, "/*");
     }
 }
